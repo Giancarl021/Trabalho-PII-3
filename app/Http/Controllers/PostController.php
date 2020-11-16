@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function create($title, $message) {
-        if(!$message || !$title) {
+    public function create(Request $request) {
+        $title = $request->input('title');
+        $content = $request->input('content');
+
+        if(!$content || !$title) {
             return view('error', [ 'message' => 'Dados essenciais faltantes']);
         }
 
-        
+        return view('message', ['title' => 'Post Criado', 'message' => 'O post foi cadastrado']);
     }
 
     public function delete($post_id) {
@@ -23,6 +26,10 @@ class PostController extends Controller
             return view('error', [ 'message' => 'Este Post não existe']);
         }
 
-        return view('deleted', ['id' => $post_id ]);
+        return view('message', ['title' => 'Post Excluído', 'message' => 'O post foi apagado']);
+    }
+
+    public function index() {
+        return view('post');
     }
 }

@@ -6,7 +6,7 @@
 @section('pre-content')
 
 <section class="section container">
-    <button class="button is-primary is-fullwidth">
+    <button class="button is-primary is-fullwidth" onclick="window.location = '{{ route('post.index') }}'">
         Criar Post
     </button>
 </section>

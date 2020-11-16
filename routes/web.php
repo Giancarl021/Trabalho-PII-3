@@ -17,6 +17,9 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])
     ->name('home');
+    
+Route::get('/post', [PostController::class, 'index'])
+    ->name('post.index');
 
 Route::post('/post', [PostController::class, 'create'])
     ->name('post.create');

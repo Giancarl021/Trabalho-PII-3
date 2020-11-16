@@ -1,7 +1,7 @@
 @extends('template')
 
-@section('title', 'Post removido')
-@section('subtitle', 'O post foi apagado')
+@section('title', $title)
+@section('subtitle', $message ?? '')
 
 @section('pre-content')
 
