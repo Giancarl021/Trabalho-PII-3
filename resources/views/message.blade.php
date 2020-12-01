@@ -1,4 +1,4 @@
-@extends('template')
+@extends('layouts/template')
 
 @section('title', $title)
 @section('subtitle', $message ?? '')
